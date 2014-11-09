@@ -1,4 +1,5 @@
 body {
+	background: url('/assets/subtle_white_feathers.png');
 	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 
 }
@@ -7,6 +8,12 @@ body {
 	background: url('/assets/binding_dark.png');
 	border-radius: 0;
 	box-shadow: 0px 2px 3px 1px #2a2a2a;
+}
+
+.navbar-inverse .navbar-brand {
+	color: rgb(69, 133, 242);
+	font-family: 'afta_serifregular', serif;
+	font-size: 26px;
 }
 
 .booyah-box {
