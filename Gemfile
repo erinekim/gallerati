@@ -33,14 +33,12 @@ group :doc do
 end
 
 gem 'bootstrap-sass', '~> 3.3.0'
-
 gem 'autoprefixer-rails'
-
-#add pagination
 gem 'will_paginate', '~> 3.0.7'
-
-#add simpleform
 gem 'simple_form'
+gem 'devise', '>=3.2.4'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
