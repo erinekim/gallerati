@@ -23,15 +23,20 @@ class PlacesController < ApplicationController
 	end
 
 	def update
+ 		@place = Place.find(params[:id])
+  		@place.update_attributes(place_params)
+  	    redirect_to root_path
+	end
+
+	def destroy
 		@place = Place.find(params[:id])
-		@place.update_attributes(place_params)
+		@place.destroy
 		redirect_to root_path
-	end 
+	end
 
 private
 
 	def place_params
 		params.require(:place).permit(:name, :description, :address)
 	end
-
 end
