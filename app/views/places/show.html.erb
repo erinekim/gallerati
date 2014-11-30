@@ -1,9 +1,45 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
 	<h1><%= @place.name %></h1>
-	<i><%= @place.address %></h1>
+	<i><%= @place.address %></i>
 	<br/><br/>
 	<p><%= @place.description %></p>
 
+<!-- photo for self-guided study -->
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Add your photos
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add Your Photos</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+  			<%= f.input :caption %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Add Photo(s)", :class => 'btn btn-primary' %> </div>
+			<% end %>
+    </div>
+  </div>
+</div>
+
+<h1 class="pull-left"> Photos </h1>
+<% @place.photos.each do |photo| %>
+	<div class="col-xs-12 col-sm-6">
+			<%= photo.photos %>
+			<%= photo.caption %>
+	</div>
+<% end %>
+
+<!-- Map --> 
 <% if @place.latitude.present? && @place.longitude.present? %>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
