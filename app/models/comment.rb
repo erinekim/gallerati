@@ -3,11 +3,11 @@ class Comment < ActiveRecord::Base
 	belongs_to :place
 
 	RATINGS = {
-		'one star' => '1_star', 
-		'two stars' => '2_stars', 
-		'three stars' => '3_stars', 
-		'four stars' => '4_stars', 
-		'five stars' => '5_stars', 
+		'* - Extremely Poor' => '1_star', 
+		'* * - Below Average' => '2_stars', 
+		'* * * - Average' => '3_stars', 
+		'* * * * - Above Average ' => '4_stars', 
+		'* * * * * - Excellent!' => '5_stars', 
 		}
 
 		def humanized_rating 
