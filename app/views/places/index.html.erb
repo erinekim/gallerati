@@ -8,6 +8,16 @@
 		<small><%= place.user.email %></small>
 		<% end %>
 
+<% if place.photos.present? %>
+<div class="col-xs-12">
+	<%if place.photos.last.present? %>
+		<%= place.photos.last %>
+	<% end %>
+	<small><%=place.photos.last.user.email %></small>
+
+</div>
+<% end %>
+
 <% if place.comments.present? %>
 <div class ="col-xs-12">
 	<blockquote>
@@ -17,6 +27,8 @@
 		<%= place.comments.last.message %>
 		<small><%= place.comments.last.user.email %></small>
 	</blockquote>
+
+
 </div> 
 <% end %>
 </div>
