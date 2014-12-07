@@ -9,21 +9,21 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <%= image_tag 'jamesleebyars.jpg' %>
+      <%= image_tag 'henri_rousseau1.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
-        Rose Table of Perfection - MoMA PS1 
+        Henri Rousseau
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'jacobhashimoto.jpg' %>
+      <%= image_tag 'rene_magritte1.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
-        Mary Boone Gallery
+        Rene Magritte
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'ashishkapoor.JPG' %>
+      <%= image_tag 'Suzuki_Kiitsu1.jpeg', :class => 'img-responsive' %>
       <div class="carousel-caption">
-        Ashish Kapoor 
+        Suzuki Kiitsu
       </div>
     </div>
   </div>
@@ -39,6 +39,7 @@
   </a>
 </div>
 
+<div class="bigbox">
 <% @places.each do |place| %>
 	<div class="booyah-box col-xs-10 col-xs-offset-1">
 		<h1><%= link_to place.name, place_path(place) %></h1><br/>
@@ -71,3 +72,5 @@
 </div>
 
  <%= will_paginate @places %>
+
+</div>
